@@ -6,3 +6,19 @@
   border: 1px solid black;
   height: 150px;
 }
+
+body {
+
+}
+
+.board {
+  border: 2px solid black;
+}
+
+.selectedOne {
+  background-color: purple;
+}
+
+.selectedTwo {
+  background-color: aqua;
+}
