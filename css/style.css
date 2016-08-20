@@ -5,7 +5,14 @@
 .box {
   border: 1px solid black;
   height: 150px;
+  text-align: center;
+  font-size: 30px;
+
 }
 .btn {
-  margin-bottom: 10px;
+  margin-top: 10px;
+}
+img {
+  max-width: 130px;
+  margin: 5px;
 }
