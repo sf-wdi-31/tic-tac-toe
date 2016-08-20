@@ -15,6 +15,13 @@ $(document).ready(function() {
 
   $('.box').on('click', function eventHandler() {
 
+    if (p1HeldBoxes.indexOf($(this).attr('id')) !== -1 ||
+        p2HeldBoxes.indexOf($(this).attr('id')) !== -1 ||
+        $('#currentPlayer').html() === "<h3>The Winner is Ninja!</h3>" ||
+        $('#currentPlayer').html() === "<h3>The Winner is Pirate!</h3>") {
+          $(this).preventDefault();
+        }
+
     counter ++;
     if (currentPlayer === player1){
       $(this).html(player1);
@@ -113,12 +120,18 @@ $(document).ready(function() {
         }
   };
 
-  $('.btn').on('click', function eventHandler(){
+  $('.boardBtn').on('click', function eventHandler(){
     $(".box").html(' ');
     p1HeldBoxes = [];
     p2HeldBoxes = [];
     currentPlayer = player1;
     $('#currentPlayer').html("<h3>Current Playa: Ninja!</h3>");
     counter = 0;
+  });
+  $('.scoreBtn').on('click', function eventHandler(){
+    p1Wins = 0;
+    p2Wins = 0;
+    $('#p2Score').html("<h3>Pirate Score: "+ p2Wins +"</h3>");
+    $('#p1Score').html("<h3>Ninja Score: "+ p1Wins +"</h3>");
   })
 });
