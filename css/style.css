@@ -5,4 +5,11 @@
 .box {
   border: 1px solid black;
   height: 150px;
+  font-size: 100px;
+  text-align: center;
+}
+
+.btn {
+  text-align: center;
+  margin-top: 20px;
 }
