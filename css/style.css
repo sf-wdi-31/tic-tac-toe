@@ -1,8 +1,17 @@
+body {
+  background-color: #e6b3cc;
+  font-family: 'Baloo Da', cursive;
+}
+h1 {
+  color: #ffffff;
+  font-size: 5em;
+  font-family: 'Baloo Da', sans-serif;;
+}
 #board {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
-
 .box {
-  border: 1px solid black;
+  border: 1px solid #ffffff;
   height: 150px;
 }
