@@ -1,9 +1,7 @@
 // wait for the DOM to finish loading
 // Sanity Check
 console.log("Sanity Check")
-function winner(){
-  if ()
-}
+
 
 $(document).ready(function() {
   var player1 = '<img src="imgs/ninja.jpg" alt="" />'
@@ -16,18 +14,23 @@ $(document).ready(function() {
     counter ++;
     if (currentPlayer === player1){
       $(this).html(player1);
-      currentPlayer = player2 ;
+      currentPlayer = player2;
+      $('#currentPlayer').html("<h3>Current Playa: Pirate!</h3>");
     } else {
       $(this).html(player2)
+      $('#currentPlayer').html("<h3>Current Playa: Ninja!</h3>");
       currentPlayer = player1;
     }
     if (counter > 3){
-      console.log(winner());
+      if ($('#a1').html()=== $('#a2').html() === $('#a3').html()){
+        alert("The Winner is " + currentPlayer);
+      }
     }
   });
   $('.btn').on('click', function eventHandler(){
     $(".box").html(' ');
-    currentPlayer = '<img src="imgs/ninja.jpg" alt="" />';
+    currentPlayer = player1;
+    $('#currentPlayer').html("<h3>Current Playa: Ninja!</h3>");
     counter = 0;
   })
 });
