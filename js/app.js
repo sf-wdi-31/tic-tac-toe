@@ -27,21 +27,18 @@ var oPlayer
   $(".box").on("click", function handleClick() {
 //    console.log("click");
     $(this).addClass("symbol");
+//  return playerMoves
   });
 
 //counts each players moves//
-var playerMoves = function () {
+//var playerMoves = function () {
+//  var count = 0
+//  var total = 0 + [i];
+//  for (var i = 0; i ??? ; i++) {
+//    return total
+//  }
+//}
 
-}
-  //    start with 0
-  //    count x boxes
-  //    total x moves
-
-  //  var oMoves =
-  //    start with 0
-  //    count o boxes
-  //    total o moves
-  
 //whose turn is it//
 //var takingTurns = function() {
 //  if (xPlayer)
@@ -66,6 +63,13 @@ var claimBox = function() {
     }
 }
 
+//play again button - reset board//
+  $(".btn-default").on("click", function handleClick() {
+    //    console.log("click");
+    $(".box").removeClass("symbol");
+    //  return playerMoves
+  });
+
 });
 
 
@@ -84,14 +88,6 @@ var claimBox = function() {
 //  if x || o == 1, 2, 3 || 4, 5, 6 || 7, 8, 9 || 1, 5, 9 || 3, 5, 7 || 1, 4, 7 || 2, 5, 8 || 3, 6, 9
 //    it is a win
 //  else takingTurns
-
-//reset everything function//
-//  if (checkForWin) {
-//    clearBoard
-//    remove all append childs
-//$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
-
-//  }
 
 //detect a draw//
 //  if (1, 2, 3, 4, 5, 6, 7, 8, 9) && !(checkforWin) {
