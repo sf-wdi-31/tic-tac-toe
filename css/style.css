@@ -15,8 +15,9 @@ h1 {
   border: 1px solid #ffffff;
   height: 150px;
 }
-
-
-/* style x*\
-
-/* style o *|
+.symbol {
+  background-color: #ffffff;
+  height: 150px;
+  color: #666699;
+  text-align: center;
+}

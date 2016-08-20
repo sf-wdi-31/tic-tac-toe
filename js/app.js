@@ -3,74 +3,97 @@ $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
 
-// testing jQuery linked
+// SUCCESS testing jQuery linked
 //  $(window).on("load", function handleLoad(event) {
 //    alert("Your game is ready!");
 //  });
 
-//  testing click on box
+//  SUCCESS testing click on box
 //  $(".col-md-4").on("click", function handleClick(event) {
 //    alert("You clicked a box!");
 //  });
 
-//  testing a specific box is clicked
+//  SUCCESS testing a specific box is clicked
 //  $(".box").on("click", function handleClick() {
 //    var idValue = $(this).attr("id");
 //    console.log(idValue);
 //  });
 
-});
+//declares players//
+var xPlayer
+var oPlayer
 
-//box is clicked//
+//SUCCESS box is clicked//
   $(".box").on("click", function handleClick() {
-    var boxClicked = $(this).attr("id");
-    //change this line to block another click and/or send x or o image//
-    console.log(boxClicked);
+//    console.log("click");
+    $(this).addClass("symbol");
   });
 
-//who's playing//
-var xPlayer = ???
-var oPlayer = ???
+//counts each players moves//
+var playerMoves = function () {
 
-//who's turn is it//
-  var takingTurns =
-    if the number of xPlayer moves < the number of oPlayer moves
-      it is xPlayer turn
-      if the number of xPlayer moves > the number of oPlayer moves
-      it is oPlayer turn
-      //x always starts//
-      else it is xPlayer turn
+}
+  //    start with 0
+  //    count x boxes
+  //    total x moves
 
-//claim a box function//
-  var claimBox =
-    is the box empty
-    if it is empty
-    .append("box")
-    x || o
+  //  var oMoves =
+  //    start with 0
+  //    count o boxes
+  //    total o moves
+  
+//whose turn is it//
+//var takingTurns = function() {
+//  if (xPlayer)
+//}
+//      if the number of xPlayer moves < the number of oPlayer moves
+//        it is xPlayer turn
+//        if the number of xPlayer moves > the number of oPlayer moves
+//        it is oPlayer turn
+        //x always starts//
+//        else it is xPlayer turn
 
-//track turns function//
-  var xMoves =
-    start with 0
-    count x boxes
-    total x moves
+//UNTESTED claim a box function//
+var claimBox = function() {
+    if (xPlayer) {
+      $(this).text("x");
+    }
+    else if (oPlayer) {
+      $(this).text("o");
+    }
+    else {
+      $(this).text(null);
+    }
+}
 
-  var oMoves =
-    start with 0
-    count o boxes
-    total o moves
+});
+
+
+
 
 //win//
-  var checkForWin =
-  if x || o == 1, 2, 3 || 4, 5, 6 || 7, 8, 9 || 1, 5, 9 || 3, 5, 7 || 1, 4, 7 || 2, 5, 8 || 3, 6, 9
-    it is a win
-  else takingTurns
+//  var checkForWin = function () {
+//    if ((x === "1" && "2" & "3") || (x === "4" && "5" & "6")
+//
+//    )(x === "1" && "2" & "3"); {
+//      alert("You won!");
+//    }
+//    else if ()
+//    alert("You won!");
+//  }
+//  if x || o == 1, 2, 3 || 4, 5, 6 || 7, 8, 9 || 1, 5, 9 || 3, 5, 7 || 1, 4, 7 || 2, 5, 8 || 3, 6, 9
+//    it is a win
+//  else takingTurns
 
 //reset everything function//
-  if (checkForWin) {
-    clearBoard
-  }
+//  if (checkForWin) {
+//    clearBoard
+//    remove all append childs
+//$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
+
+//  }
 
 //detect a draw//
-  if (1, 2, 3, 4, 5, 6, 7, 8, 9) && !(checkforWin) {
-    clearBoard
-  }
+//  if (1, 2, 3, 4, 5, 6, 7, 8, 9) && !(checkforWin) {
+//    clearBoard
+//  }
