@@ -1,9 +1,13 @@
+body {
+  background: black;
+  color: white;
+}
 #board {
   margin-top: 10px;
 }
 
 .box {
-  border: 1px solid black;
+  border: 1px solid white;
   height: 150px;
   text-align: center;
   font-size: 30px;
@@ -15,4 +19,8 @@
 img {
   max-width: 130px;
   margin: 5px;
+}
+h3  {
+  display: inline-block;
+  margin: auto 15px;
 }

@@ -4,12 +4,14 @@ console.log("Sanity Check")
 
 
 $(document).ready(function() {
-  var player1 = '<img src="imgs/ninja.jpg" alt="" />'
+  var player1 = '<img src="imgs/ninja.svg" alt="" />'
   var player2 = '<img src="imgs/pirate.png" alt="" />'
   var currentPlayer = player1;
   var counter = 0;
   var p1HeldBoxes = [];
   var p2HeldBoxes = [];
+  var p1Wins = 0;
+  var p2Wins = 0;
 
   $('.box').on('click', function eventHandler() {
 
@@ -43,6 +45,8 @@ $(document).ready(function() {
         p1HeldBoxes.includes('8') &&
         p1HeldBoxes.includes('9'))){
           $('#currentPlayer').html("<h3>The Winner is Ninja!</h3>");
+          p1Wins ++;
+          $('#p1Score').html("<h3>Ninja Score: "+ p1Wins +"</h3>");
         };
     if ((p2HeldBoxes.includes('1') &&
         p2HeldBoxes.includes('2') &&
@@ -54,6 +58,8 @@ $(document).ready(function() {
         p2HeldBoxes.includes('8') &&
         p2HeldBoxes.includes('9'))){
           $('#currentPlayer').html("<h3>The Winner is Pirate!</h3>");
+          p2Wins ++;
+          $('#p2Score').html("<h3>Pirate Score: "+ p2Wins +"</h3>");
         }
   };
   function isVertical (){
@@ -67,6 +73,8 @@ $(document).ready(function() {
         p1HeldBoxes.includes('6') &&
         p1HeldBoxes.includes('9'))){
           $('#currentPlayer').html("<h3>The Winner is Ninja!</h3>");
+          p1Wins ++;
+          $('#p1Score').html("<h3>Ninja Score: "+ p1Wins +"</h3>");
         };
     if ((p2HeldBoxes.includes('1') &&
         p2HeldBoxes.includes('4') &&
@@ -78,6 +86,8 @@ $(document).ready(function() {
         p2HeldBoxes.includes('6') &&
         p2HeldBoxes.includes('9'))){
           $('#currentPlayer').html("<h3>The Winner is Pirate!</h3>");
+          p2Wins ++;
+          $('#p2Score').html("<h3>Pirate Score: "+ p2Wins +"</h3>");
         }
   };
   function isDiagonal(){
@@ -88,6 +98,8 @@ $(document).ready(function() {
         p1HeldBoxes.includes('5') &&
         p1HeldBoxes.includes('7'))){
           $('#currentPlayer').html("<h3>The Winner is Ninja!</h3>");
+          p1Wins ++;
+          $('#p1Score').html("<h3>Ninja Score: "+ p1Wins +"</h3>");
         };
     if ((p2HeldBoxes.includes('1') &&
         p2HeldBoxes.includes('5') &&
@@ -96,6 +108,8 @@ $(document).ready(function() {
         p2HeldBoxes.includes('5') &&
         p2HeldBoxes.includes('7'))){
           $('#currentPlayer').html("<h3>The Winner is Pirate!</h3>");
+          p2Wins ++;
+          $('#p2Score').html("<h3>Pirate Score: "+ p2Wins +"</h3>");
         }
   };
 
