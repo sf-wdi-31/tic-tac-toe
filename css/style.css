@@ -17,9 +17,12 @@ body {
   margin-top: 10px;
 }
 img {
-  max-width: 130px;
-  margin: 5px;
+  padding-top: 5px;
 }
+#ninja {
+  padding-top: 15px;
+}
+
 h3  {
   display: inline-block;
   margin: auto 15px;

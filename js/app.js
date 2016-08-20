@@ -4,8 +4,8 @@ console.log("Sanity Check")
 
 
 $(document).ready(function() {
-  var player1 = '<img src="imgs/ninja.svg" alt="" />'
-  var player2 = '<img src="imgs/pirate.png" alt="" />'
+  var player1 = '<img class="col-md-12 col-xs-12" id="ninja" src="imgs/ninja.svg" alt="" />'
+  var player2 = '<img class="col-md-12 col-xs-12"  src="imgs/pirate.png" alt="" />'
   var currentPlayer = player1;
   var counter = 0;
   var p1HeldBoxes = [];
