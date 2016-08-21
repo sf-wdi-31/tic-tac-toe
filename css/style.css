@@ -15,10 +15,10 @@ body {
   border: 2px solid black;
 }
 
-.selectedOne {
+.ex {
   background-color: purple;
 }
 
-.selectedTwo {
+.oh {
   background-color: aqua;
 }
