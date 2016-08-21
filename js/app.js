@@ -51,29 +51,33 @@ xArray = [];
 //SUCCESS IN CONSOLE check for a win//
 //  $("#board").each(".box", function checkforWin() {
 
-  $(".o").each(function (item) {
+  $(".o").each(function (item)) {
     oArray.push($(this).attr("id"));
 
-  });
+  };
 
 //    for oArray ($(".o").each(function (item)) {
 //      oArray.push($(this).attr("id"));
 //    });
 
-  ($(".x").each(function (item) {
+  $(".x").each(function (item)) {
     xArray.push($(this).attr("id"));
 
+  };
+
+  var threeInARow = [("1" && "2" && "3") || ("4" && "5" && "6") || ("7" && "8" && "9") || ("1" && "5" && "9") || ("3" && "5" && "7") || ("1" && "4" && "7") || ("2" && "5" && "8") || ("3" && "6" && "9")];
+
+  $(".box").on("click", function handleClick() {
+    if ($(".x") == threeInARow) {
+      alert("Congratulations X! You won!");
+    }
+    else if ($(".o") == threeInARow) {
+      alert("Congratulations O! You won!");
+    }
+    else {
+      null;
+    }
   });
-
-//  });
-
-
-//  var threeInARow = [("1" && "2" && "3") || ("4" && "5" && "6") || ("7" && "8" && "9") || ("1" && "5" && "9") || ("3" && "5" && "7") || ("1" && "4" && "7") || ("2" && "5" && "8") || ("3" && "6" && "9")];
-//    if (threeInARow) {
-//      alert("You won!");
-//    }
-//});
-
 
 //SUCCESS play again button - reset board//
   $(".btn-default").on("click", function handleClick() {
