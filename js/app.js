@@ -28,7 +28,7 @@ var play = 0;
 
   });
 
-//counts turns and sends x or o//
+//SUCCESS counts turns and sends x or o//
   $(".box").on("click", function handleClick() {
 
     play++;
@@ -49,17 +49,17 @@ oArray = [];
 xArray = [];
 
 //SUCCESS IN CONSOLE check for a win//
-  $("#board").each(".box", function checkforWin() {
+//  $("#board").each(".box", function checkforWin() {
 
-    $(".o").each(function (item) {
-      oArray.push($(this).attr("id"))
-    });
+//    $(".o").each(function (item) {
+//      oArray.push($(this).attr("id"))
+//    });
 
-    $(".x").each(function (item) {
-      xArray.push($(this).attr("id"))
-    });
+//    $(".x").each(function (item) {
+//      xArray.push($(this).attr("id"))
+//    });
 
-  });
+//  });
 
 //  var threeInARow = [("1" && "2" && "3") || ("4" && "5" && "6") || ("7" && "8" && "9") || ("1" && "5" && "9") || ("3" && "5" && "7") || ("1" && "4" && "7") || ("2" && "5" && "8") || ("3" && "6" && "9")];
 //    if (threeInARow) {
