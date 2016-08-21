@@ -19,77 +19,69 @@ $(document).ready(function() {
 //    console.log(idValue);
 //  });
 
-//declares players//
-var xPlayer
-var oPlayer
+var play = 0;
 
 //SUCCESS box is clicked//
   $(".box").on("click", function handleClick() {
-//    console.log("click");
+
     $(this).addClass("symbol");
-//  return playerMoves
+
   });
 
-//counts each players moves//
-//var playerMoves = function () {
-//  var count = 0
-//  var total = 0 + [i];
-//  for (var i = 0; i ??? ; i++) {
-//    return total
-//  }
-//}
+//counts turns and sends x or o//
+  $(".box").on("click", function handleClick() {
 
-//whose turn is it//
-//var takingTurns = function() {
-//  if (xPlayer)
-//}
-//      if the number of xPlayer moves < the number of oPlayer moves
-//        it is xPlayer turn
-//        if the number of xPlayer moves > the number of oPlayer moves
-//        it is oPlayer turn
-        //x always starts//
-//        else it is xPlayer turn
+    play++;
 
-//UNTESTED claim a box function//
-var claimBox = function() {
-    if (xPlayer) {
-      $(this).text("x");
-    }
-    else if (oPlayer) {
+    if (play % 2 == 0) {
       $(this).text("o");
-    }
+      $(this).addClass("o");
+      }
     else {
-      $(this).text(null);
-    }
-}
+      $(this).text("x");
+      $(this).addClass("x");
+      }
+    });
 
-//play again button - reset board//
-  $(".btn-default").on("click", function handleClick() {
-    //    console.log("click");
-    $(".box").removeClass("symbol");
-    //  return playerMoves
+//creates box array//
+
+oArray = [];
+xArray = [];
+
+//SUCCESS IN CONSOLE check for a win//
+  $("#board").each(".box", function checkforWin() {
+
+    $(".o").each(function (item) {
+      oArray.push($(this).attr("id"))
+    });
+
+    $(".x").each(function (item) {
+      xArray.push($(this).attr("id"))
+    });
+
   });
 
-});
-
-
-
-
-//win//
-//  var checkForWin = function () {
-//    if ((x === "1" && "2" & "3") || (x === "4" && "5" & "6")
-//
-//    )(x === "1" && "2" & "3"); {
+//  var threeInARow = [("1" && "2" && "3") || ("4" && "5" && "6") || ("7" && "8" && "9") || ("1" && "5" && "9") || ("3" && "5" && "7") || ("1" && "4" && "7") || ("2" && "5" && "8") || ("3" && "6" && "9")];
+//    if (threeInARow) {
 //      alert("You won!");
 //    }
-//    else if ()
-//    alert("You won!");
-//  }
-//  if x || o == 1, 2, 3 || 4, 5, 6 || 7, 8, 9 || 1, 5, 9 || 3, 5, 7 || 1, 4, 7 || 2, 5, 8 || 3, 6, 9
-//    it is a win
-//  else takingTurns
+//});
+
+
+//SUCCESS play again button - reset board//
+  $(".btn-default").on("click", function handleClick() {
+
+    $(".box").removeClass("symbol");
+
+    play = 0;
+
+    $(".box").text("");
+
+  });
 
 //detect a draw//
 //  if (1, 2, 3, 4, 5, 6, 7, 8, 9) && !(checkforWin) {
-//    clearBoard
+//  $("#board").removeClass("symbol");
 //  }
+
+});

@@ -4,8 +4,13 @@ body {
 }
 h1 {
   color: #ffffff;
-  font-size: 5em;
-  font-family: 'Baloo Da', sans-serif;;
+  font-size: 6em;
+  font-family: 'Baloo Da', sans-serif;
+  text-shadow: 3px 3px #666699;
+}
+h2 {
+  color: #666699;
+  font-family: 'Baloo Da', sans-serif;
 }
 #board {
   margin-top: 10px;
@@ -17,7 +22,13 @@ h1 {
 }
 .symbol {
   background-color: #ffffff;
+  border-color: #e6b3cc;
+  border-width: medium;
   height: 150px;
   color: #666699;
   text-align: center;
+}
+
+button {
+  margin-bottom: 3em;
 }
