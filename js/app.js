@@ -2,8 +2,7 @@ var gameBoard = [[],[],[]];
 var currentPlayer = 'x';
 // run game only while there is no winner
 var winner = false;
-
-
+var clicks = 0;
 
 // wait for the DOM to finish loading
 $(document).ready(function() {
@@ -42,40 +41,54 @@ $(document).ready(function() {
 			winner = checkWinner(currentPlayer, gameBoard);
 	  		currentPlayer = 'x';
   		}
+  		clicks++;
   		
+  		if (clicks === 9) {
+		$('body').append("<h2>EVERYBODY'S A LOSER :( WOMP WOMP</h2>");
+	} 		
 	});
+	
 });
 
 function checkWinner () {
-	// console.log('current player: ' + currentPlayer);
+	
 	//horizontal check
 	for (var i = 0; i < 3; i++) {
 		if (gameBoard[i][0] === currentPlayer && gameBoard[i][1] === currentPlayer && gameBoard[i][2] === currentPlayer) {
-			alert("PLAYER " + currentPlayer.toUpperCase() + ' WINS!!!!!!!');
+			$('body').append('<h2>PLAYER ' + currentPlayer.toUpperCase() + ' WINS!!!!!!!</h2>');
+			$('#' + i + '-0').css('color', 'teal');
+			$('#' + i + '-1').css('color', 'teal');
+			$('#' + i + '-2').css('color', 'teal');
 			return true;
 		}
-		
 	}
 	//vertical check
 	for (var i = 0; i < 3; i++) {
 		if (gameBoard[0][i] === currentPlayer && gameBoard[1][i] === currentPlayer && gameBoard[2][i] === currentPlayer) {
-			alert("PLAYER " + currentPlayer.toUpperCase() + ' WINS!!!!!!!');
-			return true;
+			$('body').append('<h2>PLAYER ' + currentPlayer.toUpperCase() + ' WINS!!!!!!!</h2>');
+			$('#0-' + i).css('color', 'teal');
+			$('#1-' + i).css('color', 'teal');
+			$('#2-' + i).css('color', 'teal');
+			return true;	
 		}
-	}
-	
+	}	
 	//diagonal check
 	if (gameBoard[0][0] === currentPlayer && gameBoard[1][1] === currentPlayer && gameBoard[2][2] === currentPlayer) {
-			alert("PLAYER " + currentPlayer.toUpperCase() + ' WINS!!!!!!!');
+			$('body').append('<h2>PLAYER ' + currentPlayer.toUpperCase() + ' WINS!!!!!!!</h2>');
+			$('#0-0').css('color', 'teal');
+			$('#1-1').css('color', 'teal');
+			$('#2-2').css('color', 'teal');
 			return true;
 	}	
 	if (gameBoard[2][0] === currentPlayer && gameBoard[1][1] === currentPlayer && gameBoard[0][2] === currentPlayer) {
-			alert("PLAYER " + currentPlayer.toUpperCase() + ' WINS!!!!!!!');
+			$('body').append('<h2>PLAYER ' + currentPlayer.toUpperCase() + ' WINS!!!!!!!</h2>');
+			$('#2-0').css('color', 'teal');
+			$('#1-1').css('color', 'teal');
+			$('#0-2').css('color', 'teal');
 			return true;
 	}
 	return false;
 }
-
 
 function resetBoard () {
 	console.log('reset');
@@ -83,4 +96,7 @@ function resetBoard () {
 	currentPlayer = 'x';
 	gameBoard = [[],[],[]];
 	winner = false;
+	$('.box').css('color', 'white');
+	clicks = 0;
+	$('h2').remove();
 }
