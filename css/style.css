@@ -2,7 +2,26 @@
   margin-top: 10px;
 }
 
+h1 {
+	color: white;
+}
+
 .box {
-  border: 1px solid black;
+  border: 1px solid white;
   height: 150px;
+}
+
+body {
+	background-color: purple;
+}
+
+#restart {
+	background-color: turquoise;
+	color: white;
+	border-color: turquoise;
+	margin: 4em;
+}
+
+#board {
+	background-color: turquoise;
 }
