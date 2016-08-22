@@ -3,13 +3,13 @@ $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
 
-  //pop up box says the following
+  // pop up box says the following
 	// console.log('Are you ready for some fun?!');
 
 
 //testing when click on box works'
 	// $('.col-md-4').on('click', function handleClick(event) {
-	// 	console.log('You clicked a box');
+	// 	console.log('You clicked a box ');
 	// });
 
 

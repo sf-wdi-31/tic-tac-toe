@@ -7,6 +7,8 @@ h1 {
 	color: white;
 }
 
+
+
 .box {
   border: 1px solid white;
   height: 150px;
@@ -20,7 +22,7 @@ body {
 }
 
 #restart {
-	background-color: turquoise;
+	background-color: #b431bb;
 	color: white;
 	border-color: turquoise;
 	margin: 4em;
