@@ -2,7 +2,14 @@
   margin-top: 10px;
 }
 
+body {
+	background-color: #455e62;
+	color: white;
+}
+
 .box {
-  border: 1px solid black;
+  border: 1px solid white;
   height: 150px;
+  background-color: #99b3b7;
+  color: white;
 }
