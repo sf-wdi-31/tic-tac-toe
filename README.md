@@ -1,3 +1,7 @@
+## Michael Rogachevsky
+### This was fun to build, but I was unable to figure out how to reveal the buttons after a game finished.
+
+
 # Tic Tac Toe - Weekend Lab
 
 **Objective:** Build a tic-tac-toe game in HTML, CSS, and JavaScript.

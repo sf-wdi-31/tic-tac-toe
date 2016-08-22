@@ -13,6 +13,7 @@ $(document).ready(function() {
   var p1Wins = 0;
   var p2Wins = 0;
 
+
   $('.box').on('click', function eventHandler() {
 
     if (p1HeldBoxes.indexOf($(this).attr('id')) !== -1 ||
@@ -26,20 +27,21 @@ $(document).ready(function() {
     if (currentPlayer === player1){
       $(this).html(player1);
       p1HeldBoxes.push($(this).attr('id'));
-      console.log(p1HeldBoxes);
       currentPlayer = player2;
       $('#currentPlayer').html("<h3>Current Playa: Pirate!</h3>");
     } else {
       $(this).html(player2)
       p2HeldBoxes.push($(this).attr('id'));
-      console.log(p2HeldBoxes);
       $('#currentPlayer').html("<h3>Current Playa: Ninja!</h3>");
       currentPlayer = player1;
     }
+
     isHorizontal();
     isVertical();
     isDiagonal();
   });
+
+
 
   function isHorizontal() {
     if ((p1HeldBoxes.includes('1') &&
