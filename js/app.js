@@ -39,6 +39,7 @@ $(document).ready(function() {
     isHorizontal();
     isVertical();
     isDiagonal();
+    isDraw();
   });
 
 
@@ -69,7 +70,7 @@ $(document).ready(function() {
           $('#currentPlayer').html("<h3>The Winner is Pirate!</h3>");
           p2Wins ++;
           $('#p2Score').html("<h3>Pirate Score: "+ p2Wins +"</h3>");
-        }
+        } else { return false;}
   };
   function isVertical (){
     if ((p1HeldBoxes.includes('1') &&
@@ -97,7 +98,7 @@ $(document).ready(function() {
           $('#currentPlayer').html("<h3>The Winner is Pirate!</h3>");
           p2Wins ++;
           $('#p2Score').html("<h3>Pirate Score: "+ p2Wins +"</h3>");
-        }
+        } else { return false;}
   };
   function isDiagonal(){
     if ((p1HeldBoxes.includes('1') &&
@@ -119,8 +120,16 @@ $(document).ready(function() {
           $('#currentPlayer').html("<h3>The Winner is Pirate!</h3>");
           p2Wins ++;
           $('#p2Score').html("<h3>Pirate Score: "+ p2Wins +"</h3>");
-        }
+        } else { return false;}
   };
+  function isDraw(){
+    if ((p1HeldBoxes.length + p2HeldBoxes.length === 9) &&
+        isHorizontal() === false &&
+        isVertical() === false &&
+        isDiagonal() === false){
+          $('#currentPlayer').html("<h3>Nobody wins! You gonna let him get away with that?</h3>");
+        }
+  }
 
   $('.boardBtn').on('click', function eventHandler(){
     $(".box").html(' ');
