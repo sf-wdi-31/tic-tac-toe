@@ -3,6 +3,8 @@ var currentPlayer = 'x';
 // run game only while there is no winner
 var winner = false;
 
+
+
 // wait for the DOM to finish loading
 $(document).ready(function() {
   // all code to manipulate the DOM goes inside this function
@@ -15,6 +17,10 @@ $(document).ready(function() {
   			return;
   		}
   		
+  		// if box is claimed, do not run function
+  		if ($(this).text() !== '') {
+  			return;
+  		}
   		// retrieve the id of the block you click on
   		var id = $(this).attr('id');
   		
@@ -36,17 +42,19 @@ $(document).ready(function() {
 			winner = checkWinner(currentPlayer, gameBoard);
 	  		currentPlayer = 'x';
   		}
+  		
 	});
 });
 
 function checkWinner () {
-	console.log('current player: ' + currentPlayer);
+	// console.log('current player: ' + currentPlayer);
 	//horizontal check
 	for (var i = 0; i < 3; i++) {
 		if (gameBoard[i][0] === currentPlayer && gameBoard[i][1] === currentPlayer && gameBoard[i][2] === currentPlayer) {
 			alert("PLAYER " + currentPlayer.toUpperCase() + ' WINS!!!!!!!');
 			return true;
 		}
+		
 	}
 	//vertical check
 	for (var i = 0; i < 3; i++) {
