@@ -43,7 +43,7 @@ $(document).ready(function() {
   		}
   		clicks++;
   		
-  		if (clicks === 9) {
+  		if (clicks === 9 && winner === false) {
 		$('body').append("<h2>EVERYBODY'S A LOSER :( WOMP WOMP</h2>");
 	} 		
 	});
