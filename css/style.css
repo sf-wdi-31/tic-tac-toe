@@ -2,7 +2,7 @@ body {
   font-family: 'Indie Flower';
   font-weight: bolder;
   color: #D3D3D3;
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(40, 40, 40);
 }
 
 .container {
@@ -50,7 +50,7 @@ hr {
 #reset-div {
   text-align: center;
   margin: 70px 0;
-  color: black;
+  color: rgb(40,40,40);
 }
 
 #reset-btn {

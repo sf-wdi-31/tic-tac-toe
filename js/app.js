@@ -62,12 +62,6 @@ $(document).ready(function() {
     $(this).text(turn);
     $(this).unbind("click");
 
-    // if (turn === 'X') {
-    //   $(this).css("background", "#c0ffee");
-    // } else {
-    //   $(this).css("background", "#8affae");
-    // }
-
     arrSelect(selectedArr);
 
     if (turn === "X") {
@@ -153,7 +147,9 @@ $(document).ready(function() {
     return false;
   }
 
-  // $(".reset-btn").on("click", location.reload());
+  $("#reset-btn").on("click", function () {
+    location.reload()
+  })
 
   function resetboard(event) {
     location.reload();
