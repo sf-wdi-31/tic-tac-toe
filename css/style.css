@@ -6,3 +6,20 @@
   border: 1px solid black;
   height: 150px;
 }
+
+.button {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.xClass {
+  text-align: center;
+  font-size: 100px;
+  color: red;
+}
+
+.oClass {
+  text-align: center;
+  font-size: 100px;
+  color: blue;
+}
