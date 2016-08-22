@@ -23,3 +23,8 @@
   font-size: 100px;
   color: blue;
 }
+
+.displayResult {
+  text-align: center;
+  font-size: 25px;
+}

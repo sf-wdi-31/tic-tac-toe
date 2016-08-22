@@ -88,19 +88,22 @@ $(document).ready(function() {
 
 
         if(y.length > 8){
-          alert('Draw! Click Reset To Play Again!')
+          $('.displayResult').append("<span>" + "Draw! Click Reset To Play Again!" + "</span>")
+          //alert('Draw! Click Reset To Play Again!')
           winner = true;
         }
       }
     })
 
     function xWins(){
-      alert('X has won! Click Reset To Play Again!');
+      $('.displayResult').append("<span>" + "'X' has won! Click Reset To Play Again!" + "</span>")
+      //alert('X has won! Click Reset To Play Again!');
       winner = true;
     }
 
     function oWins(){
-      alert('O has won! Click Reset To Play Again!');
+      $('.displayResult').append("<span>" + "'O' has won! Click Reset To Play Again!" + "</span>")
+      //alert('O has won! Click Reset To Play Again!');
       winner = true;
     }
 
@@ -108,6 +111,7 @@ $(document).ready(function() {
       // console.log("help");
       $('.box').html("");
       $('.box').removeClass("xClass oClass");
+      $('span').remove();
       x=0;
       y=[];
       winner = false;
