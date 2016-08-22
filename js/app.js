@@ -33,20 +33,23 @@ var play = 0;
 
     play++;
 
-    if (play % 2 == 0) {
-      $(this).text("o");
-      $(this).addClass("o");
-      }
-    else {
-      $(this).text("x");
-      $(this).addClass("x");
-      }
-    checkforWin();
+//    if ($(".box").text("") {
+
+      if (play % 2 == 0) {
+        $(this).text("o");
+        $(this).addClass("o");
+        }
+      else {
+        $(this).text("x");
+        $(this).addClass("x");
+        }
+//    });
+    playerArrays();
     });
 
 //SUCCESS check for a win//
 
-  function checkforWin () {
+  function playerArrays () {
 
     var oArray = [];
     var xArray = [];
@@ -58,8 +61,30 @@ var play = 0;
     $(".x").each(function (item) {
       xArray.push($(this).attr("id"));
     });
-
+    checkforWin();
   };
+
+  function checkforWin () {
+
+    var winningArrays = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"],
+    ["1", "5", "9"], ["3", "5", "7"], ["1", "4", "7"], ["2", "5", "8"],
+    ["3", "6", "9"]];
+
+      for (var i = 0; i < winningArrays.length; i++) {
+        var threeInARowArray = winningArrays[i];
+
+        if (threeInARowArray.every(function (value) {
+          return xArray.indexOf(value) != -1;
+          {
+          return true;
+          alert("Congratulations X! You won!");
+          } {
+          return false;
+          }
+        })
+      }
+    }
+
 
 //  var threeInARow = [("1" && "2" && "3") || ("4" && "5" && "6") || ("7" && "8" && "9") || ("1" && "5" && "9") || ("3" && "5" && "7") || ("1" && "4" && "7") || ("2" && "5" && "8") || ("3" && "6" && "9")];
 
