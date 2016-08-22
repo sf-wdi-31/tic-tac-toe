@@ -1,5 +1,5 @@
 ## Michael Rogachevsky
-### This was fun to build, but I was unable to figure out how to reveal the buttons after a game finished.
+### This repo is all the elements of my Tic-Tac-Toe game. It has a Ninja vs Pirates theme. It tracks number of games won by each team and has buttons to set the board and the scores independently. This was fun to build, but I was unable to figure out how to reveal the buttons after a game finished. 
 
 
 # Tic Tac Toe - Weekend Lab
