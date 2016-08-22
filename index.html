@@ -2,46 +2,54 @@
 <html>
   <head>
     <meta charset="utf-8">
-
     <!-- set viewport to device width to allow responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS from CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
     <!-- link to custom stylesheet (always require after Bootstrap) -->
-    <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
     <!-- jQuery from CDN -->
-
-
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <!-- link to custom javascript file (always require after external JS libraries) -->
+    <script src="js/app.js" type="text/javascript">
 
-    <title>Tic Tac Toe</title>
+    </script>
+    <title>Ninjas vs Pirates! Tic Tac Toe</title>
   </head>
   <body>
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h1>Tic Tac Toe</h1>
+          <h1>Ninjas vs Pirates! Tic Tac Toe</h1>
           <hr>
+          <h3 id="p1Score">Ninja Score: 0</h3>
+          <h3 id="currentPlayer">Current Playa: Ninja!</h3>
+          <h3 id="p2Score">Pirate Score: 0</h3>
         </div>
       </div>
-      <div class="row">
 
         <!-- a column represents our game board -->
         <!-- the `offset` class helps us center the board -->
-        <div class="col-md-6 col-md-offset-3" id="board">
-
+        <div class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3" id="board">
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
           <div class="row">
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
+            <div id="1" class="col-md-4 col-xs-4 box"></div>
+            <div id="2" class="col-md-4 col-xs-4 box"></div>
+            <div id="3" class="col-md-4 col-xs-4 box"></div>
           </div>
-
-
-
+          <div class="row">
+            <div id="4" class="col-md-4 col-xs-4 box"></div>
+            <div id="5" class="col-md-4 col-xs-4 box"></div>
+            <div id="6" class="col-md-4 col-xs-4 box"></div>
+          </div>
+          <div class="row">
+            <div id="7" class="col-md-4 col-xs-4 box"></div>
+            <div id="8" class="col-md-4 col-xs-4 box"></div>
+            <div id="9" class="col-md-4 col-xs-4 box"></div>
+          </div>
+          <button id='resetBoard' class="btn btn-danger boardBtn" type="button" name="button">Reset Board</button>
+          <button id='resetScore' class="btn btn-danger scoreBtn" type="button" name="button">Reset Score</button>
         </div>
       </div>
     </div>
