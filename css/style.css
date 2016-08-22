@@ -2,6 +2,7 @@
   margin-top: 10px;
 }
 
+
 h1 {
 	color: white;
 }
@@ -9,10 +10,13 @@ h1 {
 .box {
   border: 1px solid white;
   height: 150px;
+  color: white;
+  font-size: 100px;
+  text-align: center;
 }
 
 body {
-	background-color: purple;
+	background-color: #445856;
 }
 
 #restart {
