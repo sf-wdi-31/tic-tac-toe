@@ -8,6 +8,7 @@ $(document).ready(function() {
   var oSelections = [];
   var selectedArr;
 
+  var turns = 0;
   var turn = "O";
 
   var horWins = [['topleft', 'topmid', 'topright'],
@@ -43,10 +44,14 @@ $(document).ready(function() {
     if (horizontalWin(selectedArr) || verticalWin(selectedArr) || diagonalWin(selectedArr)) {
       if (turn === "X") {
         alert("Player 1 has won!");
+        return true;
       } else {
         alert("Player 2 has won!");
+        return true;
       }
     }
+
+    return false;
   }
 
   $('.box').on("click", function (event) {
@@ -55,7 +60,13 @@ $(document).ready(function() {
     turn = whichTurn();
 
     $(this).text(turn);
-    $(this).off("click");
+    $(this).unbind("click");
+
+    // if (turn === 'X') {
+    //   $(this).css("background", "#c0ffee");
+    // } else {
+    //   $(this).css("background", "#8affae");
+    // }
 
     arrSelect(selectedArr);
 
@@ -65,7 +76,19 @@ $(document).ready(function() {
       oSelections.push(boxID);
     }
 
-    isWinner(selectedArr);
+    if (isWinner(selectedArr)) {
+      resetboard();
+    }
+
+    turns += 1;
+
+    console.log(turns);
+
+    if ((turns === 9) && (isWinner() === false)) {
+      alert("Looks like this one was a tie!");
+      resetboard();
+    }
+
   })
 
   function horizontalWin(arr) {
@@ -128,6 +151,20 @@ $(document).ready(function() {
       }
     }
     return false;
+  }
+
+  // $(".reset-btn").on("click", location.reload());
+
+  function resetboard(event) {
+    location.reload();
+
+    // $('.box').text("");
+    // $('.box').on("click");
+    // $('.box').css("background", "white");
+    //
+    // xSelections = [];
+    // oSelections = [];
+    console.log('reset');
   }
 
 });
