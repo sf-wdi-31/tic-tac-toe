@@ -1,3 +1,6 @@
+// *********** GLOBAL VARIABLES  ***********
+var play = 0;
+
 // wait for the DOM to finish loading
 $(document).ready(function() {
   // all code to manipulate the DOM
@@ -19,8 +22,6 @@ $(document).ready(function() {
 //    console.log(idValue);
 //  });
 
-var play = 0;
-
 //SUCCESS box is clicked//
   $(".box").on("click", function handleClick() {
 
@@ -33,79 +34,28 @@ var play = 0;
 
     play++;
 
-//    if ($(".box").text("") {
+    if (!$(this).hasClass("x") && !$(this).hasClass("o")) {
 
       if (play % 2 == 0) {
         $(this).text("o");
         $(this).addClass("o");
-        }
+      }
+
       else {
         $(this).text("x");
         $(this).addClass("x");
-        }
-//    });
-    playerArrays();
-    });
-
-//SUCCESS check for a win//
-
-  function playerArrays () {
-
-    var oArray = [];
-    var xArray = [];
-
-    $(".o").each(function (item) {
-      oArray.push($(this).attr("id"));
-    });
-
-    $(".x").each(function (item) {
-      xArray.push($(this).attr("id"));
-    });
-    checkforWin();
-  };
-
-  function checkforWin () {
-
-    var winningArrays = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"],
-    ["1", "5", "9"], ["3", "5", "7"], ["1", "4", "7"], ["2", "5", "8"],
-    ["3", "6", "9"]];
-
-      for (var i = 0; i < winningArrays.length; i++) {
-        var threeInARowArray = winningArrays[i];
-
-        if (threeInARowArray.every(function (value) {
-          return xArray.indexOf(value) != -1;
-          {
-          return true;
-          alert("Congratulations X! You won!");
-          } {
-          return false;
-          }
-        })
       }
-    }
 
+    };
 
-//  var threeInARow = [("1" && "2" && "3") || ("4" && "5" && "6") || ("7" && "8" && "9") || ("1" && "5" && "9") || ("3" && "5" && "7") || ("1" && "4" && "7") || ("2" && "5" && "8") || ("3" && "6" && "9")];
+    playerArrays();
 
-//  $(".box").on("click", function handleClick() {
-//    if ($(".x") == threeInARow) {
-//      alert("Congratulations X! You won!");
-//    };
-//    else if ($(".o") == threeInARow) {
-//      alert("Congratulations O! You won!");
-//    };
-//    else {
-//      null;
-//    }
-
-
-//}
+  });
 
 //SUCCESS play again button - reset board//
   $(".btn-default").on("click", function handleClick() {
 
-    $(".box").removeClass("symbol");
+    $(".box").removeClass("symbol o x");
 
     play = 0;
 
@@ -113,9 +63,54 @@ var play = 0;
 
   });
 
-//detect a draw//
-//  if (1, 2, 3, 4, 5, 6, 7, 8, 9) && !(checkforWin) {
-//  $("#board").removeClass("symbol");
-//  }
+}); // document.ready();
 
-});
+
+function playerArrays () {
+
+  var oArray = [];
+  var xArray = [];
+
+  $(".o").each(function (item) {
+    oArray.push($(this).attr("id"));
+  });
+
+  $(".x").each(function (item) {
+    xArray.push($(this).attr("id"));
+  });
+
+  if (checkforWin(xArray)) {
+    alert("Congratulations X! You won!");
+  }
+
+  else if (checkforWin(oArray)) {
+    alert("Congratulations O! You won!");
+  }
+
+  else if (oArray.length + xArray.length == 9) {
+    alert("It's a draw! Play again!");
+  }
+};
+
+
+function checkforWin (playerArray) {
+
+  var winningArrays = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"],
+  ["1", "5", "9"], ["3", "5", "7"], ["1", "4", "7"], ["2", "5", "8"],
+  ["3", "6", "9"]];
+
+  var playerArrayIncludes = function (element) {
+    return playerArray.includes(element);
+  }
+
+  for (var i = 0; i < winningArrays.length; i++) {
+
+    var arr = winningArrays[i];
+
+    if (arr.every(playerArrayIncludes)) {
+      return true;
+    }
+  }
+
+  return false;
+}
