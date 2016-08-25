@@ -10,19 +10,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- link to custom stylesheet (always require after Bootstrap) -->
-    <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
-    <!-- jQuery from CDN -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" title="no title" charset="utf-8">
 
+    <!-- jQuery from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
     <!-- link to custom javascript file (always require after external JS libraries) -->
-
+    <script src="js/app.js"></script>
     <title>Tic Tac Toe</title>
   </head>
   <body>
     <div class="container">
       <div class="row text-center">
-        <div class="col-md-12">
+        <div class="col-sm-12 col-md-12">
           <h1>Tic Tac Toe</h1>
+          <h2 id="messageLine"></h2>
           <hr>
         </div>
       </div>
@@ -35,11 +37,22 @@
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
           <div class="row">
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
+            <div class="col-md-4 box" id="topLeft"></div>
+            <div class="col-md-4 box" id="topCenter"></div>
+            <div class="col-md-4 box" id="topRight"></div>
           </div>
-
+          <div class="row">
+            <div class="col-md-4 box" id="midLeft"></div>
+            <div class="col-md-4 box" id="midCenter"></div>
+            <div class="col-md-4 box" id="midRight"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 box" id="bottomLeft"></div>
+            <div class="col-md-4 box" id="bottomCenter"></div>
+            <div class="col-md-4 box" id="bottomRight"></div>
+          </div>
+          <br>
+          <button type="button" class="btn btn-primary center-block" id="playAgain">Play again!</button>
 
 
         </div>
