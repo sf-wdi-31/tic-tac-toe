@@ -80,15 +80,18 @@ function playerArrays () {
   });
 
   if (checkforWin(xArray)) {
-    alert("Congratulations X! You won!");
+    $(".col-md-12").append("<h2>Congratulations X! You won!</h2>");
+//    alert("Congratulations X! You won!");
   }
 
   else if (checkforWin(oArray)) {
-    alert("Congratulations O! You won!");
+    $(".col-md-12").append("<h2>Congratulations O! You won!</h2>");
+//    alert("Congratulations O! You won!");
   }
 
   else if (oArray.length + xArray.length == 9) {
-    alert("It's a draw! Play again!");
+    $(".col-md-12").append("<h2>It's a draw! Play again!</h2>");
+//  alert("It's a draw! Play again!");
   }
 };
 
