@@ -80,12 +80,12 @@ function playerArrays () {
   });
 
   if (checkforWin(xArray)) {
-    $(".col-md-12").append("<h2>Congratulations X! You won!</h2>");
+    $(".col-md-12").append("<h2>Congratulations <span>X</span> ! You won!</h2>");
 //    alert("Congratulations X! You won!");
   }
 
   else if (checkforWin(oArray)) {
-    $(".col-md-12").append("<h2>Congratulations O! You won!</h2>");
+    $(".col-md-12").append("<h2>Congratulations <span>O<span> ! You won!</h2>");
 //    alert("Congratulations O! You won!");
   }
 

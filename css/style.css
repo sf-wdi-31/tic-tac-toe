@@ -12,6 +12,10 @@ h2 {
   color: #669999;
   font-family: 'Baloo Da', sans-serif;
 }
+span {
+  color: #ffffff;
+  text-shadow: 3px 3px #669999;
+}
 #board {
   margin-top: 10px;
   margin-bottom: 10px;
