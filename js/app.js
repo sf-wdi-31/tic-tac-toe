@@ -84,13 +84,13 @@ function playerArrays () {
   });
 
   if (checkforWin(xArray)) {
-    $("#results").text("Congratulations! You won!");
+    $("#results").text("Congratulations X! You won!");
     $(".box").off("click");
 //    alert("Congratulations X! You won!");
   }
 
   else if (checkforWin(oArray)) {
-    $("#results").text("Congratulations! You won!");
+    $("#results").text("Congratulations O! You won!");
     $(".box").off("click");
 //    alert("Congratulations O! You won!");
   }
