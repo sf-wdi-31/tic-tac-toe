@@ -33,7 +33,10 @@ span {
   text-align: center;
   font-size: 100px;
 }
-
+#results {
+  color: #ffffff;
+  font-size: 3em;
+}
 button {
   margin-bottom: 3em;
 }

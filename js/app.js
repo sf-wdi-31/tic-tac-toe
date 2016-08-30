@@ -61,6 +61,10 @@ $(document).ready(function() {
 
     $(".box").text("");
 
+    $("#results").text("");
+
+    $(".box").on("click");
+
   });
 
 }); // document.ready();
@@ -80,17 +84,20 @@ function playerArrays () {
   });
 
   if (checkforWin(xArray)) {
-    $(".col-md-12").append("<h2>Congratulations <span>X</span> ! You won!</h2>");
+    $("#results").text("Congratulations! You won!");
+    $(".box").off("click");
 //    alert("Congratulations X! You won!");
   }
 
   else if (checkforWin(oArray)) {
-    $(".col-md-12").append("<h2>Congratulations <span>O<span> ! You won!</h2>");
+    $("#results").text("Congratulations! You won!");
+    $(".box").off("click");
 //    alert("Congratulations O! You won!");
   }
 
   else if (oArray.length + xArray.length == 9) {
-    $(".col-md-12").append("<h2>It's a draw! Play again!</h2>");
+    $("#results").text("It's a draw! Play again!");
+    $(".box").off("click");
 //  alert("It's a draw! Play again!");
   }
 };
