@@ -22,35 +22,28 @@ $(document).ready(function() {
 //    console.log(idValue);
 //  });
 
-//SUCCESS box is clicked//
-  $(".box").on("click", function handleClick() {
+  function claimABox () {
+    // $(".box").on("click", function handleClick() {
+      $(this).addClass("symbol");
+      if (!$(this).hasClass("x") && !$(this).hasClass("o")) {
+          play++;
 
-    $(this).addClass("symbol");
+        if (play % 2 == 0) {
+          $(this).text("o");
+          $(this).addClass("o");
+        }
 
-  });
-
-//SUCCESS counts turns and sends x or o//
-  $(".box").on("click", function handleClick() {
-
-    play++;
-
-    if (!$(this).hasClass("x") && !$(this).hasClass("o")) {
-
-      if (play % 2 == 0) {
-        $(this).text("o");
-        $(this).addClass("o");
+        else {
+          $(this).text("x");
+          $(this).addClass("x");
+        }
       }
-
-      else {
-        $(this).text("x");
-        $(this).addClass("x");
-      }
-
-    };
 
     playerArrays();
 
-  });
+  }
+
+  $(".box").on("click", claimABox);
 
 //SUCCESS play again button - reset board//
   $(".btn-default").on("click", function handleClick() {
@@ -63,8 +56,7 @@ $(document).ready(function() {
 
     $("#results").text("");
 
-    $(".box").on("click");
-
+    $(".box").on("click", claimABox);
   });
 
 }); // document.ready();
