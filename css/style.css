@@ -2,7 +2,32 @@
   margin-top: 10px;
 }
 
+
+h1 {
+	color: white;
+}
+
+
+
 .box {
-  border: 1px solid black;
+  border: 1px solid white;
   height: 150px;
+  color: white;
+  font-size: 100px;
+  text-align: center;
+}
+
+body {
+	background-color: #445856;
+}
+
+#restart {
+	background-color: #b431bb;
+	color: white;
+	border-color: turquoise;
+	margin: 4em;
+}
+
+#board {
+	background-color: turquoise;
 }
