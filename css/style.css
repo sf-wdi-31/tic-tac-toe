@@ -1,3 +1,12 @@
+h1 {
+  font-family: 'Handlee', cursive;
+  font-size: 60px;
+  background-color: #F0EDEE;
+  padding: 20px;
+  border: 1px dashed black;
+  text-transform: uppercase;
+}
+
 #board {
   margin-top: 10px;
 }
@@ -5,4 +14,30 @@
 .box {
   border: 1px solid black;
   height: 150px;
+  text-align: center;
+  font-size: 50px;
+  padding-top: 40px;
+}
+
+body {
+background-color: #ECF0F3;
+}
+
+.board {
+  border: 2px solid black;
+}
+
+.glyphicon-fire {
+  background-color: #FEDFCC;
+  color: #F86B2E;
+}
+.glyphicon-tint {
+  background-color: #C4E0FF;
+  color: #2288FB;
+}
+.btn-primary {
+  font-size: 40px;
+  background-color: #F0EDEE;
+  padding: 10px 40px 10px 40px;
+  margin: 30px;
 }
